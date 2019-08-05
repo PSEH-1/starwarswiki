@@ -1,10 +1,17 @@
 package com.starwarswiki.app.domain;
 
+import java.io.Serializable;
+
 /**
  * This class is intended to create a POJO that can adequately capture response from swapi API
  * into a well defined Java object using restTemplate.getForObject() method.
  */
-public class SearchResults {
+public class SearchResults implements Serializable {
+
+    private long count;
+    private String next;
+    private String previous;
+    private String results;
 
 //    HTTP 200 OK
 //    Allow: GET, HEAD, OPTIONS

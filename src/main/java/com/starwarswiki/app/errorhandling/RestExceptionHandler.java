@@ -17,14 +17,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<Object> handleNotFound(
             Exception ex, WebRequest request) {
         return handleExceptionInternal(ex, "Encountered an error while fetching information on the Star Wars topic you queried!",
-                new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+                new HttpHeaders(), HttpStatus.SERVICE_UNAVAILABLE, request);
     }
-
-    /*@ExceptionHandler({InvalidRequest.class})
-    public ResponseEntity<Object> handleBadRequest(
-            Exception ex, WebRequest request) {
-        return handleExceptionInternal(ex, ex.getLocalizedMessage(),
-                new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
-    }*/
 
 }
